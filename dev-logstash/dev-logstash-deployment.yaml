@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: deployment-logstash
+  name: LE-stack
 spec:
   replicas: 3
   revisionHistoryLimit: 2
@@ -13,4 +13,11 @@ spec:
       containers:
       - name: logstash
         image: docker.elastic.co/logstash/logstash:5.4.0
-        #args: "bin/logstash -f logstash.conf"
+        volumeMounts: 
+        - name: config-volume
+          mountPath: /usr/share/logstash/pipeline/
+      volumes: 
+      - name: config-volume
+        configMap:
+          name: logstash-config
+      
