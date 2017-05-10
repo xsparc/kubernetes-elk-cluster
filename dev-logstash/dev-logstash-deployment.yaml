@@ -19,5 +19,5 @@ spec:
       volumes: 
       - name: config-volume
         configMap:
-          name: logstash-configls
+          name: logstash-config
       
