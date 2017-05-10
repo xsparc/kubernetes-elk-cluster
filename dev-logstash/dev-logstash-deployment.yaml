@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: LEstack
+  name: le-stack
 spec:
   replicas: 3
   revisionHistoryLimit: 2
