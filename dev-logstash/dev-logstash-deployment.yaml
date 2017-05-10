@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: LE-stack
+  name: LEstack
 spec:
   replicas: 3
   revisionHistoryLimit: 2
@@ -19,5 +19,5 @@ spec:
       volumes: 
       - name: config-volume
         configMap:
-          name: logstash-config
+          name: logstash-configls
       
