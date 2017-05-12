@@ -2,6 +2,8 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: le-stack
+  labels:
+    app: logstash
 spec:
   replicas: 3
   revisionHistoryLimit: 2
