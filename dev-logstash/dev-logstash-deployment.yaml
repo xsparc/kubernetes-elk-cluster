@@ -20,7 +20,7 @@ spec:
           mountPath: /usr/share/logstash/pipeline/
         ports: 
         - containerPort: 8080
-          hostPort: 32767
+          #hostPort: 32767
       volumes: 
       - name: config-volume
         configMap:
