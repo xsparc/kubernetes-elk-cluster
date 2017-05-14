@@ -10,9 +10,22 @@ spec:
     metadata:
       labels:
         app: logstash
+      # Init Containers in V 1.5 API  
+      annotations:
+        pod.beta.kubernetes.io/init-containers: '[
+          {
+          "name": "sysctl",
+            "image": "busybox",
+            "imagePullPolicy": "IfNotPresent",
+            "command": ["sysctl", "-w", "vm.max_map_count=262144"],
+            "securityContext": {
+              "privileged": true
+            }
+          }
+        ]'
     spec:
       containers:
-      #logstash container
+      # Logstash container
       - name: logstash
         image: docker.elastic.co/logstash/logstash:5.4.0
         volumeMounts: 
@@ -20,11 +33,11 @@ spec:
           mountPath: /usr/share/logstash/pipeline/
         ports: 
         - containerPort: 8080
-      #elasticsearch container  
-      #- name: elasticsearch
-      #  image: docker.elastic.co/elasticsearch/elasticsearch:5.4.0
-      #  ports:
-      #  - containerPort: 9200
+      # Elasticsearch container  
+      - name: elasticsearch
+        image: docker.elastic.co/elasticsearch/elasticsearch:5.4.0
+        ports:
+        - containerPort: 9200
       volumes: 
       - name: config-volume
         configMap:
