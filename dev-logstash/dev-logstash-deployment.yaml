@@ -21,10 +21,10 @@ spec:
         ports: 
         - containerPort: 8080
       #elasticsearch container  
-      - name: elasticsearch
-        image: docker.elastic.co/elasticsearch/elasticsearch:5.4.0
-        ports:
-        - containerPort: 9200
+      #- name: elasticsearch
+      #  image: docker.elastic.co/elasticsearch/elasticsearch:5.4.0
+      #  ports:
+      #  - containerPort: 9200
       volumes: 
       - name: config-volume
         configMap:
