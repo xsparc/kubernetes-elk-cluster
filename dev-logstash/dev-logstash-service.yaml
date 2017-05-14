@@ -7,6 +7,6 @@ spec:
     app: "logstash"
   ports:
     - protocol: "TCP"
-      port: 31311
+      port: 80
       targetPort: 31311
   type: LoadBalancer
