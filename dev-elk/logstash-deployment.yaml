@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: pod-logstash
+  labels:
+    app: logstash
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: logstash
+    spec:
+      containers:
+      # Logstash container
+      - name: logstash
+        image: docker.elastic.co/logstash/logstash:5.4.0
+        volumeMounts: 
+        - name: config-volume
+          mountPath: /usr/share/logstash/pipeline/
+        ports: 
+        - containerPort: 8080
+      # Mouned volume  
+      volumes: 
+      - name: config-volume
+        configMap:
+          name: logstash-config
+      
