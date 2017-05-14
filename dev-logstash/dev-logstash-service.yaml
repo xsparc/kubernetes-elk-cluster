@@ -1,12 +1,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: "service-logstash"
+  name: service-logstash
 spec:
   selector:
-    app: "logstash"
+    app: logstash
   ports:
-    - protocol: "TCP"
+    - protocol: TCP
       port: 80
       targetPort: 31311
   type: LoadBalancer
