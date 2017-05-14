@@ -2,6 +2,7 @@ kubectl create configmap config-logstash --from-file=dev-elk/config/logstash.con
 kubectl create -f dev-elk/logstash-deployment.yaml
 kubectl create -f dev-elk/logstash-service.yaml
 kubectl create -f dev-elk/elasticsearch-deployment.yaml
+kubectl create -f dev-elk/elstack-deployment.yaml
 
 curl -XPUT 'http://104.199.233.50:8080/twitter/tweet/1' -d 'helleeo'
 curl -H "content-type: application/json" -XPUT 'http://104.199.237.200:80/twitter/tweet/1' -d '{
