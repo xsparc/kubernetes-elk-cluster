@@ -2,7 +2,7 @@ kubectl create configmap logstash-config --from-file=dev-logstash/config/logstas
 kubectl create -f dev-logstash/dev-logstash-deployment.yaml
 kubectl create -f dev-logstash/dev-logstash-service.yaml
 
-curl -XPUT 'http://104.199.237.200:80/twitter/tweet/1' -d 'helleeo'
+curl -XPUT 'http://104.199.151.70:8080/twitter/tweet/1' -d 'helleeo'
 curl -H "content-type: application/json" -XPUT 'http://104.199.237.200:80/twitter/tweet/1' -d '{
     "user" : "kimchy",
     "post_date" : "2009-11-15T14:12:12",
