@@ -1,12 +1,11 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: le-stack
+  name: elastic-stack
   labels:
     app: logstash
 spec:
-  replicas: 3
-  revisionHistoryLimit: 2
+  replicas: 1
   template:
     metadata:
       labels:
@@ -19,8 +18,7 @@ spec:
         - name: config-volume
           mountPath: /usr/share/logstash/pipeline/
         ports: 
-        - containerPort: 8080
-          #hostPort: 32767
+        - containerPort: 31311
       volumes: 
       - name: config-volume
         configMap:
