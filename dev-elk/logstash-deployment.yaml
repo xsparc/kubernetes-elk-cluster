@@ -18,9 +18,9 @@ spec:
         volumeMounts: 
         - name: config-volume
           mountPath: /usr/share/logstash/pipeline/
-        env:
+        #env:
         - name: XPACK_MONITORING_ENABLED
-          value: xpack.monitoring.disabled
+          value: false
         ports: 
         - containerPort: 8080
       # Mounted volume  
