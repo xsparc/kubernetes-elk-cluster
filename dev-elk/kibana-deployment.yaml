@@ -22,6 +22,7 @@ spec:
             value: "/api/v1/proxy/namespaces/kube-system/services/kibana-logging"
         ports: 
         - containerPort: 5601
+
         
 
 
