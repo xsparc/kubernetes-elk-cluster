@@ -9,7 +9,7 @@ spec:
   template:
     metadata:
       labels:
-        app: kibana
+        app: ek-stack
       annotations:
         pod.beta.kubernetes.io/init-containers: '[
           {
