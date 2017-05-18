@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: service-ekstack
+spec:
+  selector:
+    app: ek-stack
+  ports:
+    - protocol: TCP
+      port: 5601
+      targetPort: 5601
+  type: LoadBalancer
