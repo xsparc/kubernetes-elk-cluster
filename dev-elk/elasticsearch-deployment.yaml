@@ -10,7 +10,7 @@ spec:
     metadata:
       labels:
         app: elasticsearch
-        role: stack
+        role: analytics
       # Init Containers in V 1.5 API  
       annotations:
         pod.beta.kubernetes.io/init-containers: '[
