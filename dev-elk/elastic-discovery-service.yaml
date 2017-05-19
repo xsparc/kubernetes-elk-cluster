@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: service-ekstack
+  name: loadbalancer-ekstack
 spec:
   selector:
-    app: ek-stack
+    app: kibana
   ports:
     - protocol: TCP
       port: 5601
