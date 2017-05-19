@@ -9,4 +9,7 @@ spec:
     - protocol: TCP
       port: 9200  
       targetPort: 9200
+    - protocol: TCP
+      port: 5601
+      targetPort: 5601 
   
