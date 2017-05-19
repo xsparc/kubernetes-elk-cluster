@@ -6,10 +6,12 @@ spec:
   selector:
     role: stack
   ports:
-    - protocol: TCP
+    - name: esearch
+      protocol: TCP
       port: 9200  
       targetPort: 9200
-    - protocol: TCP
+    - name: kbana
+      protocol: TCP
       port: 5601
       targetPort: 5601 
   
