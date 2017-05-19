@@ -2,13 +2,14 @@ kubectl create configmap config-logstash --from-file=dev-elk/config/debug/logsta
 kubectl create configmap config-logstash --from-file=dev-elk/config/rel/logstash.conf
 
 kubectl create -f dev-elk/logstash-deployment.yaml
-kubectl create -f dev-elk/logstash-service.yaml
+kubectl create -f dev-elk/elasticsearch-deployment.yaml
 kubectl create -f dev-elk/elstack-deployment.yaml
 kubectl create -f dev-elk/kibana-deployment.yaml
 kubectl create -f dev-elk/ekstack-deployment.yaml
 kubectl create -f dev-elk/elkstack-deployment.yaml
 
-kubectl create -f dev-elk/elasticsearch-deployment.yaml
+
+kubectl create -f dev-elk/logstash-service.yaml
 kubectl create -f dev-elk/elastic-discovery-service.yaml
 kubectl create -f dev-elk/kibana-elastic-service.yaml
 

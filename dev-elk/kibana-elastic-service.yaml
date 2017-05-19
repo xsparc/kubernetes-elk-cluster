@@ -4,7 +4,7 @@ metadata:
   name: service-kibana-elastic-discovery
 spec:
   selector:
-    app: elasticsearch
+    role: stack
   ports:
     - protocol: TCP
       port: 9200  
