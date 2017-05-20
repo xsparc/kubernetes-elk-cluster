@@ -23,6 +23,10 @@ spec:
           value: "true"
         - name: XPACK_MONITORING_ELASTICSEARCH_URL
           value: "http://ekstack-service.default.svc.cluster.local:9200"
+        - name: XPACK_MONITORING_ELASTICSEARCH_USERNAME
+          value: "elastic"  
+        - name: XPACK_MONITORING_ELASTICSEARCH_PASSWORD
+          value: "changeme"
         ports: 
         - containerPort: 8080
       # Mounted volume  
