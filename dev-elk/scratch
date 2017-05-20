@@ -1,0 +1,24 @@
+kubectl create configmap config-logstash --from-file=dev-elk/config/debug/logstash.conf
+kubectl create configmap config-logstash --from-file=dev-elk/config/rel/logstash.conf
+
+kubectl create -f dev-elk/logstash-deployment.yaml
+kubectl create -f dev-elk/elasticsearch-deployment.yaml
+kubectl create -f dev-elk/kibana-deployment.yaml
+
+kubectl create -f dev-elk/ekstack-deployment.yaml
+kubectl create -f dev-elk/elkstack-deployment.yaml
+kubectl create -f dev-elk/elstack-deployment.yaml
+
+kubectl create -f dev-elk/logstash-service.yaml
+kubectl create -f dev-elk/elastic-discovery-service.yaml
+kubectl create -f dev-elk/ekstack-service.yaml
+
+curl -XPUT 'http://104.199.233.50:8080/twitter/tweet/1' -d 'helleeo'
+curl -H "content-type: application/json" -XPUT 'http://104.199.237.200:80/twitter/tweet/1' -d '{
+    "user" : "kimchy",
+    "post_date" : "2009-11-15T14:12:12",
+    "message" : "trying out Elasticsearch"
+}'
+
+
+Running health check to see if an Elasticsearch connection is working {:healthcheck_url=>http://logstash_system:xxxxxx@elasticsearch:9200/, :path=>"/"}
