@@ -21,4 +21,16 @@ curl -H "content-type: application/json" -XPUT 'http://104.199.237.200:80/twitte
 }'
 
 
-Running health check to see if an Elasticsearch connection is working {:healthcheck_url=>http://logstash_system:xxxxxx@elasticsearch:9200/, :path=>"/"}
+Go to https://dataconverter.curiousconcept.com/
+Sample YAML PAYLOAD then convert to JSON
+
+handler:
+  ID: 123456789
+  type: FlexUltra
+  sensors:
+    temp: 20
+    rh: 12%
+  metadata:
+    status: running
+    error: none
+
