@@ -13,6 +13,10 @@ kubectl create -f dev-elk/logstash-service.yaml
 kubectl create -f dev-elk/elastic-discovery-service.yaml
 kubectl create -f dev-elk/ekstack-service.yaml
 
+
+
+
+
 curl -XPUT 'http://104.199.233.50:8080/twitter/tweet/1' -d 'helleeo'
 curl -H "content-type: application/json" -XPUT 'http://104.199.237.200:80/twitter/tweet/1' -d '{
     "user" : "kimchy",
@@ -21,15 +25,17 @@ curl -H "content-type: application/json" -XPUT 'http://104.199.237.200:80/twitte
 }'
 
 
+
+
 Go to https://dataconverter.curiousconcept.com/
 Sample YAML PAYLOAD then convert to JSON
 
 handler:
-  ID: 123456789
+  ID: handler1
   type: FlexUltra
   sensors:
     temp: 20
-    rh: 12%
+    rh: 12
   metadata:
     status: running
     error: none
